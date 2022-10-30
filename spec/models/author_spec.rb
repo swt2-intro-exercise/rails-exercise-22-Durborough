@@ -12,4 +12,11 @@ describe "Author model", type: :model do
     expect(author.homepage).to eq(homepage)
     expect(author.name).to eq(name)
   end
+  it "should have last name not nil" do
+    last = 'Turing'
+    @good_author = Author.new(first_name: nil, last_name: last, homepage: nil)
+    expect(@good_author).to be_valid
+    @bad_author = Author.new(first_name: nil, last_name: nil, homepage: nil)
+    expect(@bad_author).to_not be_valid
+  end
 end
