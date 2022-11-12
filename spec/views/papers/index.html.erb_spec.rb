@@ -24,3 +24,16 @@ RSpec.describe "papers/index", type: :view do
     assert_select cell_selector, text: Regexp.new(2.to_s), count: 2
   end
 end
+
+describe "Index Paper page", type: :feature do
+  it "should exist and render correctly" do
+    @aPaper = FactoryBot.create :paper
+    visit papers_path
+    
+  end
+  it "should have the link to edit a paper" do
+    @aPaper = FactoryBot.create :paper
+    visit papers_path
+    expect(page).to have_link 'Edit this paper', href: "/papers/1/edit"
+  end
+end
