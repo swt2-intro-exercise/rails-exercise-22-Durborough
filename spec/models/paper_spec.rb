@@ -19,7 +19,7 @@ RSpec.describe Paper, type: :model do
   it "should have numeric year" do
     title = "On Relativity"
     venue = "Berlin"
-    year = "Berlin"
+    year = "Year"
     invalid_paper = Paper.new(title: title, venue: venue, year: year)
     expect(invalid_paper).to_not be_valid
   end
