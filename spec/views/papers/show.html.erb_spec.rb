@@ -6,7 +6,7 @@ describe "Show paper page", type: :feature do
     visit paper_path(@paper)
   end
 
-  it "should show the paper's attributes" do
+  it "should show the paper's attributes correctly" do
     expect(page).to have_text(@paper.title)
     expect(page).to have_text(@paper.venue)
     expect(page).to have_text(@paper.year)
