@@ -25,6 +25,6 @@ RSpec.describe Paper, type: :model do
   end
   it "should have authors relationship" do
     @valid_paper = FactoryBot.create :paper
-    expect(@valid_paper.authors).to be_empty
+    expect(@valid_paper.authors).to_not be_empty
   end
 end
