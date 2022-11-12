@@ -23,4 +23,8 @@ RSpec.describe Paper, type: :model do
     invalid_paper = Paper.new(title: title, venue: venue, year: year)
     expect(invalid_paper).to_not be_valid
   end
+  it "should have authors relationship" do
+    @valid_paper = FactoryBot.create :paper
+    expect(@valid_paper.authors).to be_empty
+  end
 end

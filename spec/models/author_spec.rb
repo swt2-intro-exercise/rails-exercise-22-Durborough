@@ -19,4 +19,8 @@ describe "Author model", type: :model do
     @bad_author = Author.new(first_name: nil, last_name: nil, homepage: nil)
     expect(@bad_author).to_not be_valid
   end
+  it "should have papers relationship" do
+    @valid_author = FactoryBot.create :author
+    expect(@valid_author.papers).to be_empty
+  end
 end
