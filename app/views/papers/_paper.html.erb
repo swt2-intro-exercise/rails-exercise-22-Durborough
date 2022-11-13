@@ -15,7 +15,7 @@
   </p>
   <p>
     <strong>Author:</strong>
-    <%= paper.authors.first.name %>
+    <%= paper.authors.first.name if paper.authors.first %>
   </p>
 
 </div>
